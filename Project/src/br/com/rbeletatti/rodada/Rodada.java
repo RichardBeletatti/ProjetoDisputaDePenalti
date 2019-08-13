@@ -29,11 +29,11 @@ public class Rodada {
 		partidaExtra(timeAtacante, timeDefensor);
 	}
 
-	private Jogador getMelhorJogadorPorIndice(int indice, Time time) {
+	protected Jogador getMelhorJogadorPorIndice(int indice, Time time) {
 		return time.getTecnico().getJogadoresOrdenadosPelosMelhores(time.jogadores).get(indice);
 	}
 
-	private boolean batida(Jogador batedor, Goleiro goleiro) {
+	protected boolean batida(Jogador batedor, Goleiro goleiro) {
 		if (batedor.chutarNoGol() > goleiro.defender()) {
 			System.out.println(batedor.getNome() + " vai para cobrança e... Gool !");
 			return true;
@@ -43,7 +43,7 @@ public class Rodada {
 		return false;
 	}
 
-	private void executarCobranca(Time timeAtacante, Time timeDefensor) {
+	protected void executarCobranca(Time timeAtacante, Time timeDefensor) {
 		placarAtacante = 1;
 		placarDefensor = 1;
 
@@ -56,14 +56,14 @@ public class Rodada {
 			System.out.println("Rodada " + (i + 1));
 
 			if (batida(jogadorDoTimeAtacante, goleiroTimeDefensor))
-
+ 
 				if (batida(jogadorDoTimeDefensor, goleiroTimeAtacante))
 
 					System.out.println((placarAtacante++) + " X " + (placarDefensor++));
 		}
 	}
 
-	private void partidaExtra(Time timeAtacante, Time timeDefensor) {
+	protected void partidaExtra(Time timeAtacante, Time timeDefensor) {
 		int j = 4;
 		j++;
 
@@ -86,7 +86,7 @@ public class Rodada {
 		resultado(timeAtacante, timeDefensor);
 	}
 
-	private void resultado(Time timeAtacante, Time timeDefensor) {
+	protected void resultado(Time timeAtacante, Time timeDefensor) {
 		if (this.placarAtacante > this.placarDefensor) {
 			System.out.println("Parabéns ao " + timeAtacante.getNomeDoTime() + " vencedor da disputa de Penalti !");
 		} else {
