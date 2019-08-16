@@ -1,7 +1,6 @@
 package br.com.rbeletatti.rodada;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import br.com.rbeletatti.com.jogadores.Goleiro;
@@ -15,15 +14,9 @@ public class Rodada {
 	int placarAtacante;
 	int placarDefensor;
 
-	public void rodada(List<Time> sorteio, Time timeAtacante, Time timeDefensor) {
+	public Rodada(Time timeAtacante, Time timeDefensor) {
 		this.timeAtacante = timeAtacante;
 		this.timeDefensor = timeDefensor;
-		this.sorteio = sorteio;
-
-		sorteio.add(timeAtacante);
-		sorteio.add(timeDefensor);
-
-		Collections.shuffle(sorteio);
 
 		executarCobranca(timeAtacante, timeDefensor);
 		partidaExtra(timeAtacante, timeDefensor);
@@ -56,7 +49,7 @@ public class Rodada {
 			System.out.println("Rodada " + (i + 1));
 
 			if (batida(jogadorDoTimeAtacante, goleiroTimeDefensor))
- 
+
 				if (batida(jogadorDoTimeDefensor, goleiroTimeAtacante))
 
 					System.out.println((placarAtacante++) + " X " + (placarDefensor++));
