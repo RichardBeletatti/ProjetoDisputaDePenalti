@@ -51,7 +51,6 @@ public class Main extends CriaTime {
 			e.printStackTrace();
 		}
 
-		Rodada rodada = new Rodada(timeAtacante, timeDefensor);
-		rodada.executarCobranca(timeAtacante, timeDefensor);
+		Rodada.executarCobranca(timeAtacante, timeDefensor);
 	}
 }

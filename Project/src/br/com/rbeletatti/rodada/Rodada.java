@@ -11,8 +11,8 @@ public class Rodada {
 	List<Time> sorteio = new ArrayList<>();
 	Time timeAtacante;
 	Time timeDefensor;
-	int placarAtacante;
-	int placarDefensor;
+	static int placarAtacante;
+	static int placarDefensor;
 
 	public Rodada(Time timeAtacante, Time timeDefensor) {
 		this.timeAtacante = timeAtacante;
@@ -20,11 +20,11 @@ public class Rodada {
 
 	}
 
-	private Jogador getMelhorJogadorPorIndice(int indice, Time time) {
+	private static Jogador getMelhorJogadorPorIndice(int indice, Time time) {
 		return time.getTecnico().getJogadoresOrdenadosPelosMelhores(time.jogadores).get(indice);
 	}
 
-	private boolean batida(Jogador batedor, Goleiro goleiro) {
+	private static boolean batida(Jogador batedor, Goleiro goleiro) {
 		if (batedor.chutarNoGol() > goleiro.defender()) {
 			System.out.println(batedor.getNome() + " vai para cobrança e... Gool !");
 			return true;
@@ -34,7 +34,7 @@ public class Rodada {
 		return false;
 	}
 
-	public void executarCobranca(Time timeAtacante, Time timeDefensor) {
+	public static void executarCobranca(Time timeAtacante, Time timeDefensor) {
 		placarAtacante = 1;
 		placarDefensor = 1;
 
@@ -59,7 +59,7 @@ public class Rodada {
 		}
 	}
 
-	private void partidaExtra(Time timeAtacante, Time timeDefensor) {
+	private static void partidaExtra(Time timeAtacante, Time timeDefensor) {
 		int j = 4;
 		j++;
 
@@ -71,20 +71,20 @@ public class Rodada {
 
 		System.out.println("========== RODADA EXTRA " + (j + 1) + (" ========== \n"));
 
-		while (this.placarAtacante == this.placarDefensor) {
+		while (placarAtacante == placarDefensor) {
 			if (batida(jogadorTimeAtacante, goleiroTimeDefensor)) {
-				this.placarAtacante++;
+				placarAtacante++;
 			}
 			if (batida(jogadorTimeDefensor, goleiroTimeAtacante)) {
-				this.placarDefensor++;
+				placarDefensor++;
 			}
 			break;
 		}
 		resultado(timeAtacante, timeDefensor);
 	}
 
-	private void resultado(Time timeAtacante, Time timeDefensor) {
-		if (this.placarAtacante > this.placarDefensor) {
+	private static void resultado(Time timeAtacante, Time timeDefensor) {
+		if (placarAtacante > placarDefensor) {
 			System.out.println("Parabéns ao " + timeAtacante.getNomeDoTime() + " vencedor da disputa de Penalti !");
 		} else {
 			System.out.println("Parabens ao " + timeDefensor.getNomeDoTime() + " vecendor da disputa de Penalti !");
