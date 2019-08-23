@@ -1,7 +1,6 @@
 package br.com.rbeletatti.com.main;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -13,7 +12,6 @@ import br.com.rbeletatti.com.jogadores.MeioCampo;
 import br.com.rbeletatti.com.jogadores.Volante;
 import br.com.rbeletatti.com.jogadores.Zagueiro;
 import br.com.rbeletatti.comissaotecnica.Tecnico;
-import br.com.rbeletatti.rodada.Rodada;
 import br.com.rbeletatti.rodada.Time;
 
 public class MainCriaTime {
@@ -38,9 +36,6 @@ public class MainCriaTime {
 		Time time = new Time("Corinthians", jogadores, tecnico, goleiroTime1);
 		Time time2 = new Time("São Paulo", jogadoresTime2, tecnicoTime2, goleiroTime2);
 
-		MainDisputaPenalti dp = new MainDisputaPenalti();
-
-		dp.caracterJogador().add(jogadores);
 		jogadores.add(new Zagueiro("Manoel", 32, 13, 65, 73));
 		jogadores.add(new Zagueiro("Henrique", 32, 3, 63, 70));
 		jogadores.add(new Lateral("Avelar", 25, 20, 68, 70));

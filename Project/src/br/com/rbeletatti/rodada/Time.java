@@ -28,7 +28,7 @@ public class Time {
 		this.tecnico = tecnico;
 	}
 
-	public Time(String nomeDoTime, List<Jogador> jogadores, Tecnico tecnico, Goleiro goleiro) {
+	public Time(String nomeDoTime, Tecnico tecnico, Goleiro goleiro, List<Jogador> jogadores) {
 		this.nome = nomeDoTime;
 		this.jogadores = jogadores;
 		this.tecnico = tecnico;

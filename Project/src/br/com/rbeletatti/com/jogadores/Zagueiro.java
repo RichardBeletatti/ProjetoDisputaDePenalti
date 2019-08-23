@@ -11,6 +11,11 @@ public class Zagueiro extends Jogador implements Cobrador {
 		super.setDefDoJogador(defDoJogador * 2.5);
 		super.setForcaGeralDoJogador();
 	}
+	
+	public Zagueiro(String nomeDoJogador) {
+		super.setNome(nomeDoJogador);
+		//super.setForcaGeralDoJogador();
+	}
 
 	public double chutarNoGol() {
 		return getForcaGeral();
